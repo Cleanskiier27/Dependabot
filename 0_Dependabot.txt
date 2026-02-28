@@ -1,0 +1,594 @@
+﻿2026-02-06T00:31:24.3420449Z Current runner version: '2.331.0'
+2026-02-06T00:31:24.3447594Z ##[group]Runner Image Provisioner
+2026-02-06T00:31:24.3448481Z Hosted Compute Agent
+2026-02-06T00:31:24.3449040Z Version: 20260123.484
+2026-02-06T00:31:24.3449739Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+2026-02-06T00:31:24.3450425Z Build Date: 2026-01-23T19:41:17Z
+2026-02-06T00:31:24.3451084Z Worker ID: {a7f3b9b7-6773-41ea-8a87-6f0d39951948}
+2026-02-06T00:31:24.3451820Z Azure Region: westus
+2026-02-06T00:31:24.3452311Z ##[endgroup]
+2026-02-06T00:31:24.3453823Z ##[group]Operating System
+2026-02-06T00:31:24.3454539Z Ubuntu
+2026-02-06T00:31:24.3455037Z 24.04.3
+2026-02-06T00:31:24.3455587Z LTS
+2026-02-06T00:31:24.3456059Z ##[endgroup]
+2026-02-06T00:31:24.3456569Z ##[group]Runner Image
+2026-02-06T00:31:24.3457169Z Image: ubuntu-24.04
+2026-02-06T00:31:24.3457905Z Version: 20260126.10.1
+2026-02-06T00:31:24.3459105Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260126.10/images/ubuntu/Ubuntu2404-Readme.md
+2026-02-06T00:31:24.3460666Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260126.10
+2026-02-06T00:31:24.3461551Z ##[endgroup]
+2026-02-06T00:31:24.3462763Z ##[group]GITHUB_TOKEN Permissions
+2026-02-06T00:31:24.3464638Z Contents: read
+2026-02-06T00:31:24.3465321Z Metadata: read
+2026-02-06T00:31:24.3465863Z Packages: read
+2026-02-06T00:31:24.3466360Z ##[endgroup]
+2026-02-06T00:31:24.3469037Z Secret source: None
+2026-02-06T00:31:24.3469877Z Prepare workflow directory
+2026-02-06T00:31:24.3805670Z Prepare all required actions
+2026-02-06T00:31:24.3843796Z Getting action download info
+2026-02-06T00:31:24.7923392Z Download action repository 'github/dependabot-action@main' (SHA:2c339a9695a8285e56f36eef47ae73bf772509d7)
+2026-02-06T00:31:26.1007719Z Complete job name: Dependabot
+2026-02-06T00:31:26.1800896Z ##[group]Run mkdir -p  ./dependabot-job-1235758506-1770337873
+2026-02-06T00:31:26.1801916Z [36;1mmkdir -p  ./dependabot-job-1235758506-1770337873[0m
+2026-02-06T00:31:26.1839309Z shell: /usr/bin/bash -e {0}
+2026-02-06T00:31:26.1840250Z ##[endgroup]
+2026-02-06T00:31:26.2140526Z ##[group]Run github/dependabot-action@main
+2026-02-06T00:31:26.2141242Z env:
+2026-02-06T00:31:26.2141712Z   DEPENDABOT_DISABLE_CLEANUP: 1
+2026-02-06T00:31:26.2142312Z   DEPENDABOT_ENABLE_CONNECTIVITY_CHECK: 0
+2026-02-06T00:31:26.2143220Z   GITHUB_TOKEN: ***
+2026-02-06T00:31:26.2144129Z   GITHUB_DEPENDABOT_JOB_TOKEN: ***
+2026-02-06T00:31:26.2145088Z   GITHUB_DEPENDABOT_CRED_TOKEN: ***
+2026-02-06T00:31:26.2145690Z   GITHUB_REGISTRIES_PROXY: ***
+2026-02-06T00:31:26.2146233Z ##[endgroup]
+2026-02-06T00:31:26.4325641Z 🤖 ~ starting update ~
+2026-02-06T00:31:26.4350991Z Fetching job details
+2026-02-06T00:31:27.1207185Z ##[group]Pulling updater images
+2026-02-06T00:31:27.1270799Z Pulling image ghcr.io/dependabot/dependabot-updater-npm:1fd16df5a1a2244cdfcd0f2a8dcbebe813632172 (attempt 1)...
+2026-02-06T00:31:27.3539404Z Successfully sent metric (dependabot.action.ghcr_image_pull) to remote API endpoint
+2026-02-06T00:31:54.1528657Z Pulled image ghcr.io/dependabot/dependabot-updater-npm:1fd16df5a1a2244cdfcd0f2a8dcbebe813632172
+2026-02-06T00:31:54.1540910Z Pulling image ghcr.io/dependabot/proxy:v2.0.20260129233510@sha256:aee1af4a514c0c5e573f3b33a51f9f2b9c58234cb011ea4d44b9e05aec92436c (attempt 1)...
+2026-02-06T00:31:54.3961036Z Successfully sent metric (dependabot.action.ghcr_image_pull) to remote API endpoint
+2026-02-06T00:31:55.5331733Z Pulled image ghcr.io/dependabot/proxy:v2.0.20260129233510@sha256:aee1af4a514c0c5e573f3b33a51f9f2b9c58234cb011ea4d44b9e05aec92436c
+2026-02-06T00:31:55.5334060Z ##[endgroup]
+2026-02-06T00:31:55.5335509Z Starting update process
+2026-02-06T00:31:55.8654194Z Created proxy container: cddf4339d828528e6bf8a35870e7b7900ed4a8ccc67de2b5c7e0ea1406524969
+2026-02-06T00:31:56.0712177Z Created container: 3177b9a8cccb7aeb2a15814da3231d6f336ad0adef53983b2bfecfd7b27cf82e
+2026-02-06T00:31:56.1566895Z   proxy | 2026/02/06 00:31:56 proxy starting, commit: dd760113d8edd581443a6aaafe80d4e4025251ab
+2026-02-06T00:31:56.1570470Z   proxy | 2026/02/06 00:31:56 Listening (:1080)
+2026-02-06T00:31:56.1778661Z Started container 3177b9a8cccb7aeb2a15814da3231d6f336ad0adef53983b2bfecfd7b27cf82e
+2026-02-06T00:31:56.2180866Z updater | Updating certificates in /etc/ssl/certs...
+2026-02-06T00:31:56.9344260Z updater | rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-02-06T00:31:56.9417887Z updater | 1 added, 0 removed; done.
+2026-02-06T00:31:56.9418919Z Running hooks in /etc/ca-certificates/update.d...
+2026-02-06T00:31:56.9434237Z updater | done.
+2026-02-06T00:31:57.2358996Z updater | fetch_files command is no longer used directly
+2026-02-06T00:31:59.1716654Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Starting job processing
+2026-02-06T00:31:59.1729645Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Job definition: {"job":{"command":"security","allowed-updates":[{"dependency-type":"direct","update-type":"all"},{"dependency-type":"indirect","update-type":"security"}],"commit-message-options":{"prefix":null,"prefix-development":null,"include-scope":null},"credentials-metadata":[{"type":"git_source","host":"github.com"}],"debug":null,"dependencies":["semver"],"dependency-groups":[],"dependency-group-to-refresh":null,"existing-pull-requests":[],"existing-group-pull-requests":[],"experiments":{"record-ecosystem-versions":true,"record-update-job-unknown-error":true,"proxy-cached":true,"enable-record-ecosystem-meta":true,"enable-corepack-for-npm-and-yarn":true,"enable-private-registry-for-corepack":true,"enable-shared-helpers-command-timeout":true,"enable-engine-version-detection":true,"avoid-duplicate-updates-package-json":true,"allow-refresh-for-existing-pr-dependencies":true,"allow-refresh-group-with-all-dependencies":true,"enable-enhanced-error-details-for-updater":true,"gradle-lockfile-updater":true,"gradle-wrapper-updater":true,"enable-exclude-paths-subdirectory-manifest-files":true,"group-membership-enforcement":true,"deprecate-close-command":true,"deprecate-reopen-command":true,"deprecate-merge-command":true,"deprecate-cancel-merge-command":true,"deprecate-squash-merge-command":true,"disable-close-command":true,"disable-reopen-command":true,"disable-merge-command":true,"disable-cancel-merge-command":true,"disable-squash-merge-command":true},"ignore-conditions":[],"lockfile-only":false,"max-updater-run-time":2700,"package-manager":"npm_and_yarn","requirements-update-strategy":null,"reject-external-code":false,"security-advisories":[{"dependency-name":"semver","patched-versions":[],"unaffected-versions":[],"affected-versions":[">= 7.0.0 < 7.5.2",">= 6.0.0 < 6.3.1",">= 2.0.0-alpha < 5.7.2"]},{"dependency-name":"semver","patched-versions":[],"unaffected-versions":[],"affected-versions":["< 4.3.2"]}],"security-updates-only":true,"source":{"provider":"github","repo":"microsoft/vscode-extension-samples","branch":null,"api-endpoint":"https://api.github.com/","hostname":"github.com","directories":["/lsp-multi-server-sample/client"]},"updating-a-pull-request":false,"update-subdependencies":false,"vendor-dependencies":false,"enable-beta-ecosystems":false,"repo-private":false,"multi-ecosystem-update":false,"exclude-paths":null}}
+2026-02-06T00:31:59.1796694Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1096 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:31:59.1839580Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1096 completed with status: pid 1096 exit 0
+2026-02-06T00:31:59.1841594Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.1849072Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1104 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:31:59.1882094Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1104 completed with status: pid 1104 exit 0
+2026-02-06T00:31:59.1883541Z 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.1891453Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1111 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:31:59.1924306Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1111 completed with status: pid 1111 exit 0
+2026-02-06T00:31:59.1925331Z 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.1931540Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1118 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:31:59.1966192Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1118 completed with status: pid 1118 exit 0
+2026-02-06T00:31:59.1967525Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.1976221Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1125 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:31:59.2009503Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1125 completed with status: pid 1125 exit 0
+2026-02-06T00:31:59.2010596Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2018788Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1132 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:31:59.2053836Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1132 completed with status: pid 1132 exit 0
+2026-02-06T00:31:59.2059615Z 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2061068Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1139 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:31:59.2100769Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1139 completed with status: pid 1139 exit 0
+2026-02-06T00:31:59.2104381Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2279001Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1146 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:31:59.2280674Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1146 completed with status: pid 1146 exit 0
+2026-02-06T00:31:59.2281754Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.02 seconds
+2026-02-06T00:31:59.2286608Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1153 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:31:59.2321731Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1153 completed with status: pid 1153 exit 0
+2026-02-06T00:31:59.2322743Z 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2327165Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1160 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:31:59.2367655Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1160 completed with status: pid 1160 exit 0
+2026-02-06T00:31:59.2368318Z 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2373342Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1167 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:31:59.2409593Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Process PID: 1167 completed with status: pid 1167 exit 0
+2026-02-06T00:31:59.2411400Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:31:59.2421723Z updater | 2026/02/06 00:31:59 INFO <job_1235758506> Started process PID: 1174 with command: {} git clone --no-tags --depth 1 --recurse-submodules --shallow-submodules https://github.com/microsoft/vscode-extension-samples /home/dependabot/dependabot-updater/repo {}
+2026-02-06T00:31:59.3220318Z   proxy | 2026/02/06 00:31:59 [002] GET https://github.com:443/microsoft/vscode-extension-samples/info/refs?service=git-upload-pack
+2026-02-06T00:31:59.3222210Z   proxy | 2026/02/06 00:31:59 [002] * authenticating git server request (host: github.com)
+2026-02-06T00:31:59.5896331Z   proxy | 2026/02/06 00:31:59 [002] 200 https://github.com:443/microsoft/vscode-extension-samples/info/refs?service=git-upload-pack
+2026-02-06T00:31:59.6300364Z   proxy | 2026/02/06 00:31:59 [004] POST https://github.com:443/microsoft/vscode-extension-samples/git-upload-pack
+2026-02-06T00:31:59.6301520Z 2026/02/06 00:31:59 [004] * authenticating git server request (host: github.com)
+2026-02-06T00:31:59.7267684Z   proxy | 2026/02/06 00:31:59 [004] 200 https://github.com:443/microsoft/vscode-extension-samples/git-upload-pack
+2026-02-06T00:31:59.7608504Z   proxy | 2026/02/06 00:31:59 [006] POST https://github.com:443/microsoft/vscode-extension-samples/git-upload-pack
+2026-02-06T00:31:59.7609617Z 2026/02/06 00:31:59 [006] * authenticating git server request (host: github.com)
+2026-02-06T00:31:59.9482981Z   proxy | 2026/02/06 00:31:59 [006] 200 https://github.com:443/microsoft/vscode-extension-samples/git-upload-pack
+2026-02-06T00:32:01.9821753Z updater | 2026/02/06 00:32:01 INFO <job_1235758506> Process PID: 1174 completed with status: pid 1174 exit 0
+2026-02-06T00:32:01.9822656Z 2026/02/06 00:32:01 INFO <job_1235758506> Total execution time: 2.74 seconds
+2026-02-06T00:32:01.9857544Z updater | 2026/02/06 00:32:01 INFO <job_1235758506> Started process PID: 1216 with command: {} git -C /home/dependabot/dependabot-updater/repo ls-files --stage {}
+2026-02-06T00:32:01.9959469Z updater | 2026/02/06 00:32:01 INFO <job_1235758506> Process PID: 1216 completed with status: pid 1216 exit 0
+2026-02-06T00:32:01.9961054Z 2026/02/06 00:32:01 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.0232239Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1231 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:32:02.0265903Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1231 completed with status: pid 1231 exit 0
+2026-02-06T00:32:02.0266557Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0284706Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1238 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.0318993Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1238 completed with status: pid 1238 exit 0
+2026-02-06T00:32:02.0320312Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.0329030Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1245 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.0366943Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1245 completed with status: pid 1245 exit 0
+2026-02-06T00:32:02.0369804Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0372663Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1252 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.0412673Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1252 completed with status: pid 1252 exit 0
+2026-02-06T00:32:02.0414049Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0419762Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1259 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.0461796Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1259 completed with status: pid 1259 exit 0
+2026-02-06T00:32:02.0462720Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0470947Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1266 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.0508603Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1266 completed with status: pid 1266 exit 0
+2026-02-06T00:32:02.0509669Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0514731Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1273 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.0554248Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1273 completed with status: pid 1273 exit 0
+2026-02-06T00:32:02.0555486Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0568523Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1280 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.0598560Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1280 completed with status: pid 1280 exit 0
+2026-02-06T00:32:02.0599421Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0605014Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1287 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.0642193Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1287 completed with status: pid 1287 exit 0
+2026-02-06T00:32:02.0643234Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0647071Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1294 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.0689431Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1294 completed with status: pid 1294 exit 0
+2026-02-06T00:32:02.0690527Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0697157Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1301 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.0733617Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1301 completed with status: pid 1301 exit 0
+2026-02-06T00:32:02.0735201Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.0743156Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1308 with command: {} git lfs pull --include .yarn,./yarn/cache {}
+2026-02-06T00:32:02.1102748Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1308 completed with status: pid 1308 exit 0
+2026-02-06T00:32:02.1103439Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.04 seconds
+2026-02-06T00:32:02.1148897Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1349 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:32:02.1195524Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1349 completed with status: pid 1349 exit 0
+2026-02-06T00:32:02.1196779Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.1201447Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1357 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.1253701Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1357 completed with status: pid 1357 exit 0
+2026-02-06T00:32:02.1254750Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.1259956Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1364 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.1293547Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1364 completed with status: pid 1364 exit 0
+2026-02-06T00:32:02.1294624Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1300618Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1371 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.1338139Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1371 completed with status: pid 1371 exit 0
+2026-02-06T00:32:02.1339128Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1344083Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1378 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.1380239Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1378 completed with status: pid 1378 exit 0
+2026-02-06T00:32:02.1381294Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1388247Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1385 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.1426634Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1385 completed with status: pid 1385 exit 0
+2026-02-06T00:32:02.1428288Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1432334Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1392 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.1471840Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1392 completed with status: pid 1392 exit 0
+2026-02-06T00:32:02.1472836Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1477191Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1399 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.1517008Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1399 completed with status: pid 1399 exit 0
+2026-02-06T00:32:02.1518180Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1523453Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1406 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.1561768Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1406 completed with status: pid 1406 exit 0
+2026-02-06T00:32:02.1562797Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1569136Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1413 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.1605603Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1413 completed with status: pid 1413 exit 0
+2026-02-06T00:32:02.1606620Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1613099Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1419 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.1649669Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1419 completed with status: pid 1419 exit 0
+2026-02-06T00:32:02.1650848Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1657330Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1426 with command: {} git rev-parse HEAD {}
+2026-02-06T00:32:02.1696350Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1426 completed with status: pid 1426 exit 0
+2026-02-06T00:32:02.1697222Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1745587Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1440 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:32:02.1790331Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1440 completed with status: pid 1440 exit 0
+2026-02-06T00:32:02.1791385Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.1795558Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1448 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.1833319Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1448 completed with status: pid 1448 exit 0
+2026-02-06T00:32:02.1836191Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1842696Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1455 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.1881798Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1455 completed with status: pid 1455 exit 0
+2026-02-06T00:32:02.1882760Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1889510Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1462 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.1926507Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1462 completed with status: pid 1462 exit 0
+2026-02-06T00:32:02.1927778Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1932577Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1469 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.1972922Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1469 completed with status: pid 1469 exit 0
+2026-02-06T00:32:02.1974116Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.1982201Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1476 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.2018718Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1476 completed with status: pid 1476 exit 0
+2026-02-06T00:32:02.2020227Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2025576Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1483 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.2071401Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1483 completed with status: pid 1483 exit 0
+2026-02-06T00:32:02.2072818Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2081522Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1490 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.2125938Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1490 completed with status: pid 1490 exit 0
+2026-02-06T00:32:02.2126757Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.2133682Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1497 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.2172602Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1497 completed with status: pid 1497 exit 0
+2026-02-06T00:32:02.2173658Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2179268Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1504 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.2220385Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1504 completed with status: pid 1504 exit 0
+2026-02-06T00:32:02.2221494Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2238862Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1511 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.2265118Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1511 completed with status: pid 1511 exit 0
+2026-02-06T00:32:02.2266138Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2281689Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1518 with command: {} git rev-parse HEAD {}
+2026-02-06T00:32:02.2312314Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1518 completed with status: pid 1518 exit 0
+2026-02-06T00:32:02.2313309Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2389469Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1533 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:32:02.2420737Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1533 completed with status: pid 1533 exit 0
+2026-02-06T00:32:02.2425639Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2427165Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1541 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.2467062Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1541 completed with status: pid 1541 exit 0
+2026-02-06T00:32:02.2468074Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2473549Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1548 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.2509983Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1548 completed with status: pid 1548 exit 0
+2026-02-06T00:32:02.2510796Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2515816Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1555 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.2552569Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1555 completed with status: pid 1555 exit 0
+2026-02-06T00:32:02.2554635Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2560740Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1562 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.2604632Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1562 completed with status: pid 1562 exit 0
+2026-02-06T00:32:02.2606550Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.2630611Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1569 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.2665057Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1569 completed with status: pid 1569 exit 0
+2026-02-06T00:32:02.2692640Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.2694282Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1576 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.2731214Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1576 completed with status: pid 1576 exit 0
+2026-02-06T00:32:02.2731806Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.2749457Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1583 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.2794371Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1583 completed with status: pid 1583 exit 0
+2026-02-06T00:32:02.2795549Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.2797987Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1590 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.2836362Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1590 completed with status: pid 1590 exit 0
+2026-02-06T00:32:02.2837219Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2842028Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1597 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.2879535Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1597 completed with status: pid 1597 exit 0
+2026-02-06T00:32:02.2880358Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2885596Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1604 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.2918997Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1604 completed with status: pid 1604 exit 0
+2026-02-06T00:32:02.2920132Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.2962455Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1619 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/git.store' {}
+2026-02-06T00:32:02.3009669Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1619 completed with status: pid 1619 exit 0
+2026-02-06T00:32:02.3010927Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.3015167Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1627 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.3057828Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1627 completed with status: pid 1627 exit 0
+2026-02-06T00:32:02.3058858Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3062161Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1634 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.3101734Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1634 completed with status: pid 1634 exit 0
+2026-02-06T00:32:02.3102783Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3107289Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1641 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.3148980Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1641 completed with status: pid 1641 exit 0
+2026-02-06T00:32:02.3149606Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3153777Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1648 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.3195199Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1648 completed with status: pid 1648 exit 0
+2026-02-06T00:32:02.3195800Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3201195Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1655 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.3240326Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1655 completed with status: pid 1655 exit 0
+2026-02-06T00:32:02.3241373Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3246257Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1662 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:02.3288163Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1662 completed with status: pid 1662 exit 0
+2026-02-06T00:32:02.3289146Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3293792Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1669 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:02.3329107Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1669 completed with status: pid 1669 exit 0
+2026-02-06T00:32:02.3329858Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3335511Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1676 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:02.3375164Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1676 completed with status: pid 1676 exit 0
+2026-02-06T00:32:02.3377957Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:02.3383935Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1683 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:02.3431857Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1683 completed with status: pid 1683 exit 0
+2026-02-06T00:32:02.3432893Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.3437528Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1690 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:02.3488374Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1690 completed with status: pid 1690 exit 0
+2026-02-06T00:32:02.3489804Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:02.3494142Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1697 with command: {} git lfs pull --include .yarn,./yarn/cache {}
+2026-02-06T00:32:02.3928165Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1697 completed with status: pid 1697 exit 0
+2026-02-06T00:32:02.3930790Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.04 seconds
+2026-02-06T00:32:02.3960905Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.3963496Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.3969191Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.3974992Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Fetching version for package manager: npm
+2026-02-06T00:32:02.3984296Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1728 with command: {} corepack npm -v {}
+2026-02-06T00:32:02.5331928Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1728 completed with status: pid 1728 exit 0
+2026-02-06T00:32:02.5332994Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.14 seconds
+2026-02-06T00:32:02.5333845Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version of npm: 11.7.0
+2026-02-06T00:32:02.5334770Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.5335733Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.5336460Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.5338202Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.5339339Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.5340223Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.5341209Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.5342059Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.5342870Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.5345181Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.5350214Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installing "npm@8"
+2026-02-06T00:32:02.5358446Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1740 with command: {} corepack prepare npm@8 --activate {}
+2026-02-06T00:32:02.6081405Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1740 completed with status: pid 1740 exit 0
+2026-02-06T00:32:02.6082394Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.07 seconds
+2026-02-06T00:32:02.6083207Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> npm@8 successfully installed.
+2026-02-06T00:32:02.6084128Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Activating currently installed version of npm: 8
+2026-02-06T00:32:02.6085128Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Fetching version for package manager: npm
+2026-02-06T00:32:02.6090583Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Started process PID: 1752 with command: {} corepack npm -v {}
+2026-02-06T00:32:02.9014869Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Process PID: 1752 completed with status: pid 1752 exit 0
+2026-02-06T00:32:02.9015863Z 2026/02/06 00:32:02 INFO <job_1235758506> Total execution time: 0.29 seconds
+2026-02-06T00:32:02.9017103Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version of npm: 8.19.4
+2026-02-06T00:32:02.9023707Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9024527Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9025380Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9028489Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9029408Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9030286Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9031547Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9033175Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9039377Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9045357Z 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9046376Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9047253Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9049014Z 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9050005Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9051047Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9051763Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9052372Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9053008Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9053883Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9054491Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9055148Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9055714Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9056292Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9056933Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9065715Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9066714Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9068090Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9069454Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9070684Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9071427Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9072014Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9072650Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9076559Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9078008Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9079469Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9080661Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9082402Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9083497Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9084542Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9085705Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9086779Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9087854Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:02.9088599Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:02.9089154Z 2026/02/06 00:32:02 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:02.9089736Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:02.9090337Z updater | 2026/02/06 00:32:02 INFO <job_1235758506> Installed version for npm: 11.7.0
+2026-02-06T00:32:02.9090887Z 2026/02/06 00:32:02 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:02.9091496Z 2026/02/06 00:32:02 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:03.0333499Z   proxy | 2026/02/06 00:32:03 [008] POST /update_jobs/1235758506/record_ecosystem_versions
+2026-02-06T00:32:03.2996270Z   proxy | 2026/02/06 00:32:03 [008] 204 /update_jobs/1235758506/record_ecosystem_versions
+2026-02-06T00:32:03.3041500Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Base commit SHA: 4f5cf7ae662b33ab081faa13acae70bc9e641914
+2026-02-06T00:32:03.3042201Z 2026/02/06 00:32:03 INFO <job_1235758506> Finished job processing
+2026-02-06T00:32:03.3050280Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Starting job processing
+2026-02-06T00:32:03.3068813Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Detected package manager: npm
+2026-02-06T00:32:03.3070176Z 2026/02/06 00:32:03 INFO <job_1235758506> Resolving package manager for: npm
+2026-02-06T00:32:03.3071257Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Guessed version info "npm" : "8"
+2026-02-06T00:32:03.3075880Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Fetching version for package manager: npm
+2026-02-06T00:32:03.3079918Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Started process PID: 1764 with command: {} corepack npm -v {}
+2026-02-06T00:32:03.5765037Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Process PID: 1764 completed with status: pid 1764 exit 0
+2026-02-06T00:32:03.5766232Z 2026/02/06 00:32:03 INFO <job_1235758506> Total execution time: 0.27 seconds
+2026-02-06T00:32:03.5767911Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Installed version of npm: 8.19.4
+2026-02-06T00:32:03.5769142Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Installed version for npm: 8.19.4
+2026-02-06T00:32:03.5770384Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Processing engine constraints for npm
+2026-02-06T00:32:03.5771479Z 2026/02/06 00:32:03 INFO <job_1235758506> No version requirement found for npm
+2026-02-06T00:32:03.5772526Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Running node command: node -v
+2026-02-06T00:32:03.5788800Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Started process PID: 1776 with command: {} node -v {}
+2026-02-06T00:32:03.5826531Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Process PID: 1776 completed with status: pid 1776 exit 0
+2026-02-06T00:32:03.5827996Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:03.5829016Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Command executed successfully: node -v
+2026-02-06T00:32:03.5831826Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Processing engine constraints for node
+2026-02-06T00:32:03.6441004Z   proxy | 2026/02/06 00:32:03 [010] POST /update_jobs/1235758506/update_dependency_list
+2026-02-06T00:32:03.7449268Z   proxy | 2026/02/06 00:32:03 [010] 204 /update_jobs/1235758506/update_dependency_list
+2026-02-06T00:32:03.8434322Z   proxy | 2026/02/06 00:32:03 [012] POST /update_jobs/1235758506/increment_metric
+2026-02-06T00:32:03.9353128Z   proxy | 2026/02/06 00:32:03 [012] 204 /update_jobs/1235758506/increment_metric
+2026-02-06T00:32:03.9736692Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Starting security update job for microsoft/vscode-extension-samples
+2026-02-06T00:32:03.9760186Z updater | 2026/02/06 00:32:03 INFO <job_1235758506> Checking if semver 7.3.4 needs updating
+2026-02-06T00:32:04.0753019Z   proxy | 2026/02/06 00:32:04 [014] GET https://registry.npmjs.org/semver
+2026-02-06T00:32:04.1073913Z   proxy | 2026/02/06 00:32:04 [014] 200 https://registry.npmjs.org/semver
+2026-02-06T00:32:04.2235627Z   proxy | 2026/02/06 00:32:04 [016] HEAD https://registry.npmjs.org/semver/-/semver-7.7.4.tgz
+2026-02-06T00:32:04.2436527Z   proxy | 2026/02/06 00:32:04 [016] 200 https://registry.npmjs.org/semver/-/semver-7.7.4.tgz
+2026-02-06T00:32:04.2845455Z updater | 2026/02/06 00:32:04 INFO <job_1235758506> Latest version is 7.7.4
+2026-02-06T00:32:04.3814682Z   proxy | 2026/02/06 00:32:04 [018] GET https://registry.npmjs.org/lsp-sample-multi-server-client-part
+2026-02-06T00:32:04.4775171Z   proxy | 2026/02/06 00:32:04 [018] 404 https://registry.npmjs.org/lsp-sample-multi-server-client-part
+2026-02-06T00:32:04.4897939Z updater | 2026/02/06 00:32:04 INFO <job_1235758506> VulnerabilityAuditor: starting audit
+2026-02-06T00:32:04.4970255Z updater | 2026/02/06 00:32:04 INFO <job_1235758506> Started process PID: 1778 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:05.0133957Z   proxy | 2026/02/06 00:32:05 [020] GET https://registry.npmjs.org:443/semver
+2026-02-06T00:32:05.0329572Z   proxy | 2026/02/06 00:32:05 [020] 200 https://registry.npmjs.org:443/semver
+2026-02-06T00:32:05.0698163Z   proxy | 2026/02/06 00:32:05 [022] GET https://registry.npmjs.org:443/vscode-languageclient
+2026-02-06T00:32:05.0908398Z   proxy | 2026/02/06 00:32:05 [022] 200 https://registry.npmjs.org:443/vscode-languageclient
+2026-02-06T00:32:05.1647640Z   proxy | 2026/02/06 00:32:05 [024] GET https://registry.npmjs.org:443/semver
+2026-02-06T00:32:05.1889105Z   proxy | 2026/02/06 00:32:05 [024] 200 https://registry.npmjs.org:443/semver
+2026-02-06T00:32:05.2262570Z updater | 2026/02/06 00:32:05 INFO <job_1235758506> Process PID: 1778 completed with status: pid 1778 exit 0
+2026-02-06T00:32:05.2263832Z 2026/02/06 00:32:05 INFO <job_1235758506> Total execution time: 0.73 seconds
+2026-02-06T00:32:05.2270875Z updater | 2026/02/06 00:32:05 INFO <job_1235758506> VulnerabilityAuditor: audit result viable
+2026-02-06T00:32:05.3244192Z   proxy | 2026/02/06 00:32:05 [026] HEAD https://registry.npmjs.org/semver/-/semver-7.5.2.tgz
+2026-02-06T00:32:05.3460700Z   proxy | 2026/02/06 00:32:05 [026] 200 https://registry.npmjs.org/semver/-/semver-7.5.2.tgz
+2026-02-06T00:32:05.3509978Z updater | 2026/02/06 00:32:05 INFO <job_1235758506> Started process PID: 1802 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:05.6990882Z updater | 2026/02/06 00:32:05 INFO <job_1235758506> Process PID: 1802 completed with status: pid 1802 exit 0
+2026-02-06T00:32:05.6991990Z 2026/02/06 00:32:05 INFO <job_1235758506> Total execution time: 0.35 seconds
+2026-02-06T00:32:05.7008772Z updater | 2026/02/06 00:32:05 INFO <job_1235758506> Started process PID: 1814 with command: {} git reset HEAD --hard {}
+2026-02-06T00:32:06.1780921Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1814 completed with status: pid 1814 exit 0
+2026-02-06T00:32:06.1782042Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.48 seconds
+2026-02-06T00:32:06.1783904Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1821 with command: {} git clean -fx {}
+2026-02-06T00:32:06.1884837Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1821 completed with status: pid 1821 exit 0
+2026-02-06T00:32:06.1885673Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:06.1960985Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1836 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/repo/lsp-multi-server-sample/client/git.store' {}
+2026-02-06T00:32:06.2000500Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1836 completed with status: pid 1836 exit 0
+2026-02-06T00:32:06.2001409Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2013464Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1844 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:06.2048774Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1844 completed with status: pid 1844 exit 0
+2026-02-06T00:32:06.2049915Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2055442Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1851 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:06.2095658Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1851 completed with status: pid 1851 exit 0
+2026-02-06T00:32:06.2096805Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2101146Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1858 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:06.2138440Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1858 completed with status: pid 1858 exit 0
+2026-02-06T00:32:06.2139566Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2144660Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1865 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:06.2182015Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1865 completed with status: pid 1865 exit 0
+2026-02-06T00:32:06.2188137Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2189843Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1872 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:06.2229921Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1872 completed with status: pid 1872 exit 0
+2026-02-06T00:32:06.2230635Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2236156Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1879 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:06.2273976Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1879 completed with status: pid 1879 exit 0
+2026-02-06T00:32:06.2275148Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2285100Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1886 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:06.2322648Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1886 completed with status: pid 1886 exit 0
+2026-02-06T00:32:06.2323711Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2329538Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1893 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:06.2364066Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1893 completed with status: pid 1893 exit 0
+2026-02-06T00:32:06.2365633Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2376438Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1900 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:06.2415022Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1900 completed with status: pid 1900 exit 0
+2026-02-06T00:32:06.2416185Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2421079Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1907 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:06.2471192Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1907 completed with status: pid 1907 exit 0
+2026-02-06T00:32:06.2472271Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:06.2489124Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1914 with command: {} corepack npm update semver --force --ignore-scripts --package-lock-only {}
+2026-02-06T00:32:06.6399476Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1914 completed with status: pid 1914 exit 0
+2026-02-06T00:32:06.6400170Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.39 seconds
+2026-02-06T00:32:06.6456616Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1926 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:06.9874162Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Process PID: 1926 completed with status: pid 1926 exit 0
+2026-02-06T00:32:06.9875054Z 2026/02/06 00:32:06 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:06.9905615Z updater | 2026/02/06 00:32:06 INFO <job_1235758506> Started process PID: 1938 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:07.3277714Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Process PID: 1938 completed with status: pid 1938 exit 0
+2026-02-06T00:32:07.3279153Z 2026/02/06 00:32:07 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:07.4235971Z   proxy | 2026/02/06 00:32:07 [028] GET https://registry.npmjs.org/lsp-sample-multi-server-client-part
+2026-02-06T00:32:07.4237935Z 2026/02/06 00:32:07 [028] 404 https://registry.npmjs.org/lsp-sample-multi-server-client-part (cached)
+2026-02-06T00:32:07.4239061Z 2026/02/06 00:32:07 [028] * auth'd git request previously retried, won't retry again. (cached)
+2026-02-06T00:32:07.4273252Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Requirements to unlock own
+2026-02-06T00:32:07.5205719Z   proxy | 2026/02/06 00:32:07 [030] GET https://registry.npmjs.org/lsp-sample-multi-server-client-part
+2026-02-06T00:32:07.5206811Z 2026/02/06 00:32:07 [030] 404 https://registry.npmjs.org/lsp-sample-multi-server-client-part (cached)
+2026-02-06T00:32:07.5208344Z 2026/02/06 00:32:07 [030] * auth'd git request previously retried, won't retry again. (cached)
+2026-02-06T00:32:07.5313129Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Requirements update strategy bump_versions
+2026-02-06T00:32:07.5368021Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Started process PID: 1950 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:07.8828975Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Process PID: 1950 completed with status: pid 1950 exit 0
+2026-02-06T00:32:07.8829928Z 2026/02/06 00:32:07 INFO <job_1235758506> Total execution time: 0.35 seconds
+2026-02-06T00:32:07.8861867Z updater | 2026/02/06 00:32:07 INFO <job_1235758506> Started process PID: 1962 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:08.2266005Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Process PID: 1962 completed with status: pid 1962 exit 0
+2026-02-06T00:32:08.2267063Z 2026/02/06 00:32:08 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:08.2269172Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Started process PID: 1974 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:08.5618062Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Process PID: 1974 completed with status: pid 1974 exit 0
+2026-02-06T00:32:08.5619004Z 2026/02/06 00:32:08 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:08.5652261Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Started process PID: 1986 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:08.9054254Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Process PID: 1986 completed with status: pid 1986 exit 0
+2026-02-06T00:32:08.9054914Z 2026/02/06 00:32:08 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:08.9092208Z updater | 2026/02/06 00:32:08 INFO <job_1235758506> Started process PID: 1998 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:09.2551097Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 1998 completed with status: pid 1998 exit 0
+2026-02-06T00:32:09.2552008Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.35 seconds
+2026-02-06T00:32:09.2614356Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2010 with command: node /opt/npm_and_yarn/run.js
+2026-02-06T00:32:09.6020863Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2010 completed with status: pid 2010 exit 0
+2026-02-06T00:32:09.6021495Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.34 seconds
+2026-02-06T00:32:09.6067222Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Updating semver from 7.3.4 to 7.7.4
+2026-02-06T00:32:09.6326671Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2030 with command: {} git config --global credential.helper '!/home/dependabot/common/lib/dependabot/../../bin/git-credential-store-immutable --file /home/dependabot/dependabot-updater/tmp/20260206-1084-ihw12a/dependabot_20260206-1084-tlp2tv/git.store' {}
+2026-02-06T00:32:09.6369176Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2030 completed with status: pid 2030 exit 0
+2026-02-06T00:32:09.6370258Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:09.6375408Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2038 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:09.6409285Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2038 completed with status: pid 2038 exit 0
+2026-02-06T00:32:09.6410071Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6414879Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2045 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:09.6448870Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2045 completed with status: pid 2045 exit 0
+2026-02-06T00:32:09.6449753Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6459317Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2052 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:09.6490284Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2052 completed with status: pid 2052 exit 0
+2026-02-06T00:32:09.6491046Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6496178Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2059 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:09.6536367Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2059 completed with status: pid 2059 exit 0
+2026-02-06T00:32:09.6537204Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6541792Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2066 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:09.6582110Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2066 completed with status: pid 2066 exit 0
+2026-02-06T00:32:09.6582699Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6587522Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2073 with command: {} git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/ {}
+2026-02-06T00:32:09.6630254Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2073 completed with status: pid 2073 exit 0
+2026-02-06T00:32:09.6630876Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6635489Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2080 with command: {} git config --global --add url.https://github.com/.insteadOf ssh://git@github.com: {}
+2026-02-06T00:32:09.6678468Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2080 completed with status: pid 2080 exit 0
+2026-02-06T00:32:09.6679506Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6685239Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2087 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com: {}
+2026-02-06T00:32:09.6725690Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2087 completed with status: pid 2087 exit 0
+2026-02-06T00:32:09.6726430Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6731161Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2093 with command: {} git config --global --add url.https://github.com/.insteadOf git@github.com/ {}
+2026-02-06T00:32:09.6773665Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2093 completed with status: pid 2093 exit 0
+2026-02-06T00:32:09.6774576Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.0 seconds
+2026-02-06T00:32:09.6779145Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2100 with command: {} git config --global --add url.https://github.com/.insteadOf git://github.com/ {}
+2026-02-06T00:32:09.6827555Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Process PID: 2100 completed with status: pid 2100 exit 0
+2026-02-06T00:32:09.6828534Z 2026/02/06 00:32:09 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:09.6838316Z updater | 2026/02/06 00:32:09 INFO <job_1235758506> Started process PID: 2107 with command: {} corepack npm update semver --force --ignore-scripts --package-lock-only {}
+2026-02-06T00:32:10.0689987Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Process PID: 2107 completed with status: pid 2107 exit 0
+2026-02-06T00:32:10.0690726Z 2026/02/06 00:32:10 INFO <job_1235758506> Total execution time: 0.39 seconds
+2026-02-06T00:32:10.0722635Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Started process PID: 2119 with command: {} git status --untracked-files all --porcelain v1 lsp-multi-server-sample/client {}
+2026-02-06T00:32:10.0786175Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Process PID: 2119 completed with status: pid 2119 exit 0
+2026-02-06T00:32:10.0787018Z 2026/02/06 00:32:10 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:10.0797794Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Started process PID: 2128 with command: {} git status --untracked-files all --porcelain v1 lsp-multi-server-sample/client/.yarn/cache {}
+2026-02-06T00:32:10.0853786Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Process PID: 2128 completed with status: pid 2128 exit 0
+2026-02-06T00:32:10.0854374Z 2026/02/06 00:32:10 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:10.0862275Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Started process PID: 2137 with command: {} git status --untracked-files all --porcelain v1 lsp-multi-server-sample/client/.yarn/install-state.gz {}
+2026-02-06T00:32:10.0911725Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Process PID: 2137 completed with status: pid 2137 exit 0
+2026-02-06T00:32:10.0912446Z 2026/02/06 00:32:10 INFO <job_1235758506> Total execution time: 0.01 seconds
+2026-02-06T00:32:10.0920391Z updater | 2026/02/06 00:32:10 INFO <job_1235758506> Submitting semver pull request for creation
+2026-02-06T00:32:10.2182180Z   proxy | 2026/02/06 00:32:10 [032] GET https://api.github.com:443/repos/microsoft/vscode-extension-samples/commits?per_page=100
+2026-02-06T00:32:10.2184618Z 2026/02/06 00:32:10 [032] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:10.7075160Z   proxy | 2026/02/06 00:32:10 [032] 200 https://api.github.com:443/repos/microsoft/vscode-extension-samples/commits?per_page=100
+2026-02-06T00:32:11.0925068Z   proxy | 2026/02/06 00:32:11 [034] GET https://registry.npmjs.org/semver/latest
+2026-02-06T00:32:11.1188834Z   proxy | 2026/02/06 00:32:11 [034] 200 https://registry.npmjs.org/semver/latest
+2026-02-06T00:32:11.1751667Z   proxy | 2026/02/06 00:32:11 [036] GET https://api.github.com:443/repos/npm/node-semver/releases?per_page=100
+2026-02-06T00:32:11.1752362Z 2026/02/06 00:32:11 [036] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:11.4472919Z   proxy | 2026/02/06 00:32:11 [036] 200 https://api.github.com:443/repos/npm/node-semver/releases?per_page=100
+2026-02-06T00:32:11.5550761Z   proxy | 2026/02/06 00:32:11 [038] GET https://api.github.com:443/repos/npm/node-semver/contents/
+2026-02-06T00:32:11.5551416Z 2026/02/06 00:32:11 [038] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:11.7567615Z   proxy | 2026/02/06 00:32:11 [038] 200 https://api.github.com:443/repos/npm/node-semver/contents/
+2026-02-06T00:32:11.7911381Z   proxy | 2026/02/06 00:32:11 [040] GET https://api.github.com:443/repos/npm/node-semver/contents/CHANGELOG.md?ref=main
+2026-02-06T00:32:11.7912145Z 2026/02/06 00:32:11 [040] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:11.9683786Z   proxy | 2026/02/06 00:32:11 [040] 200 https://api.github.com:443/repos/npm/node-semver/contents/CHANGELOG.md?ref=main
+2026-02-06T00:32:12.0775135Z   proxy | 2026/02/06 00:32:12 [042] GET https://github.com/npm/node-semver.git/info/refs?service=git-upload-pack
+2026-02-06T00:32:12.0775921Z 2026/02/06 00:32:12 [042] * authenticating git server request (host: github.com)
+2026-02-06T00:32:12.1789414Z   proxy | 2026/02/06 00:32:12 [042] 200 https://github.com/npm/node-semver.git/info/refs?service=git-upload-pack
+2026-02-06T00:32:12.2463822Z   proxy | 2026/02/06 00:32:12 [044] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4
+2026-02-06T00:32:12.2464494Z 2026/02/06 00:32:12 [044] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:12.5189611Z   proxy | 2026/02/06 00:32:12 [044] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4
+2026-02-06T00:32:12.5636432Z   proxy | 2026/02/06 00:32:12 [046] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4
+2026-02-06T00:32:12.5637119Z 2026/02/06 00:32:12 [046] * authenticating github api request with token for api.github.com
+2026-02-06T00:32:12.8510052Z   proxy | 2026/02/06 00:32:12 [046] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4
+2026-02-06T00:32:12.9288917Z   proxy | 2026/02/06 00:32:12 [048] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4
+2026-02-06T00:32:12.9290345Z 2026/02/06 00:32:12 [048] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4 (cached)
+2026-02-06T00:32:12.9664012Z   proxy | 2026/02/06 00:32:12 [050] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4
+2026-02-06T00:32:12.9665445Z 2026/02/06 00:32:12 [050] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4 (cached)
+2026-02-06T00:32:13.0145036Z   proxy | 2026/02/06 00:32:13 [052] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4
+2026-02-06T00:32:13.0146104Z 2026/02/06 00:32:13 [052] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.3.4 (cached)
+2026-02-06T00:32:13.0564197Z   proxy | 2026/02/06 00:32:13 [054] GET https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4
+2026-02-06T00:32:13.0565685Z 2026/02/06 00:32:13 [054] 200 https://api.github.com:443/repos/npm/node-semver/commits?sha=v7.7.4 (cached)
+2026-02-06T00:32:13.1834988Z   proxy | 2026/02/06 00:32:13 [056] GET https://registry.npmjs.org/semver
+2026-02-06T00:32:13.1835878Z 2026/02/06 00:32:13 [056] 200 https://registry.npmjs.org/semver (cached)
+2026-02-06T00:32:13.4218351Z   proxy | 2026/02/06 00:32:13 [058] POST /update_jobs/1235758506/create_pull_request
+2026-02-06T00:32:13.9746827Z   proxy | 2026/02/06 00:32:13 [058] 204 /update_jobs/1235758506/create_pull_request
+2026-02-06T00:32:14.0824706Z   proxy | 2026/02/06 00:32:14 [060] POST /update_jobs/1235758506/record_ecosystem_meta
+2026-02-06T00:32:14.1729843Z   proxy | 2026/02/06 00:32:14 [060] 204 /update_jobs/1235758506/record_ecosystem_meta
+2026-02-06T00:32:14.2885499Z   proxy | 2026/02/06 00:32:14 [062] PATCH /update_jobs/1235758506/mark_as_processed
+2026-02-06T00:32:14.4335577Z   proxy | 2026/02/06 00:32:14 [062] 204 /update_jobs/1235758506/mark_as_processed
+2026-02-06T00:32:14.4389214Z updater | 2026/02/06 00:32:14 INFO <job_1235758506> Finished job processing
+2026-02-06T00:32:14.4415444Z updater | 2026/02/06 00:32:14 INFO Results:
+2026-02-06T00:32:14.4415954Z +------------------------------------------+
+2026-02-06T00:32:14.4416442Z |   Changes to Dependabot Pull Requests    |
+2026-02-06T00:32:14.4416910Z +---------+--------------------------------+
+2026-02-06T00:32:14.4417541Z | created | semver ( from 7.3.4 to 7.7.4 ) |
+2026-02-06T00:32:14.4417992Z +---------+--------------------------------+
+2026-02-06T00:32:14.7815790Z Cleaned up container 3177b9a8cccb7aeb2a15814da3231d6f336ad0adef53983b2bfecfd7b27cf82e
+2026-02-06T00:32:14.7933334Z   proxy | 2026/02/06 00:32:14 7/31 calls cached (22%)
+2026-02-06T00:32:14.7934018Z 2026/02/06 00:32:14 Posting metrics to remote API endpoint
+2026-02-06T00:32:15.0366732Z 🤖 ~ finished ~
+2026-02-06T00:32:15.0478950Z Post job cleanup.
+2026-02-06T00:32:15.2115253Z Cleaning up orphan processes
