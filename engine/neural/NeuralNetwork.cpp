@@ -33,8 +33,8 @@ void NeuralNetwork::initialize()
         int fanIn  = layerSizes_[l];
         int fanOut = layerSizes_[l + 1];
 
-        // Xavier initialization: scale = sqrt(2 / (fanIn + fanOut))
-        double scale = std::sqrt(2.0 / (fanIn + fanOut));
+        // He initialization: scale = sqrt(2 / fanIn), suitable for ReLU networks
+        double scale = std::sqrt(2.0 / fanIn);
 
         weights_[l].resize(fanOut * fanIn);
         for (double& w : weights_[l]) {
