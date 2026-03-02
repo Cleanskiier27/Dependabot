@@ -4,6 +4,7 @@
 #include <string>
 
 #include "../../engine/neural/NeuralNetwork.h"
+#include "../../engine/led/LEDBoard.h"
 
 // Print a labeled vector of doubles to stdout.
 static void printVector(const std::string& label, const std::vector<double>& v)
@@ -33,6 +34,9 @@ int main()
 
     NeuralNetwork artemis(artemisLayers, artemisSeed);
 
+    // LED board with one LED per output neuron (threshold = 0.0)
+    LEDBoard board;
+
     // --- Sample inputs representing four sensor readings ---
     std::vector<std::vector<double>> inputs = {
         { 1.0,  0.0,  0.0,  0.0},
@@ -49,6 +53,11 @@ int main()
         std::vector<double> output = artemis.forward(inputs[i]);
         std::cout << "Output " << i + 1 << ": ";
         printVector("", output);
+
+        // Show the output on the LED board
+        std::string boardLabel = "LED board (pass " + std::to_string(i + 1) + "):";
+        board.display(boardLabel, output);
+
         std::cout << std::endl;
     }
 
