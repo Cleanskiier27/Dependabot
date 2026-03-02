@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.10)
+project(NeuralNetworkDemo CXX)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# --- Neural network library ---
+add_library(neural
+    engine/neural/NeuralNetwork.cpp
+)
+target_include_directories(neural PUBLIC engine/neural)
+
+# --- Demo executable ---
+add_executable(neural_demo
+    examples/neural_demo/main.cpp
+)
+target_link_libraries(neural_demo PRIVATE neural)
