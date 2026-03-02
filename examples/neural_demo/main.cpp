@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <vector>
 
-#include "../../engine/neural/NeuralNetwork.h"
+#include "NeuralNetwork.h"
 
 // Print a vector of doubles to stdout.
 static void printOutput(const std::vector<double>& v)
