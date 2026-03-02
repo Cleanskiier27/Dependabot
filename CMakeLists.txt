@@ -15,3 +15,9 @@ add_executable(neural_demo
     examples/neural_demo/main.cpp
 )
 target_link_libraries(neural_demo PRIVATE neural)
+
+# --- Artemis demo executable ---
+add_executable(artemis_demo
+    examples/artemis_demo/main.cpp
+)
+target_link_libraries(artemis_demo PRIVATE neural)
