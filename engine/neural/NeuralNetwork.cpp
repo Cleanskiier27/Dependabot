@@ -1,5 +1,6 @@
 #include "NeuralNetwork.h"
 
+#include <climits>
 #include <cmath>
 #include <stdexcept>
 
@@ -8,6 +9,12 @@ NeuralNetwork::NeuralNetwork(const std::vector<int>& layerSizes, unsigned int se
 {
     if (layerSizes.size() < 2) {
         throw std::invalid_argument("Network must have at least 2 layers (input and output).");
+    }
+    for (size_t i = 0; i < layerSizes.size(); ++i) {
+        if (layerSizes[i] <= 0) {
+            throw std::invalid_argument(
+                "Layer " + std::to_string(i) + " must have at least one neuron.");
+        }
     }
     initialize();
 }
@@ -36,7 +43,12 @@ void NeuralNetwork::initialize()
         // He initialization: scale = sqrt(2 / fanIn), suitable for ReLU networks
         double scale = std::sqrt(2.0 / fanIn);
 
-        weights_[l].resize(fanOut * fanIn);
+        // Guard against size_t overflow when computing the weight count.
+        // fanIn is validated to be > 0 by the constructor, so division is safe.
+        if (static_cast<size_t>(fanOut) > SIZE_MAX / static_cast<size_t>(fanIn)) {
+            throw std::invalid_argument("Layer dimensions too large: product would overflow.");
+        }
+        weights_[l].resize(static_cast<size_t>(fanOut) * static_cast<size_t>(fanIn));
         for (double& w : weights_[l]) {
             // Map uniform sample to [-1, 1] then scale
             w = (nextDouble() * 2.0 - 1.0) * scale;
@@ -67,12 +79,14 @@ std::vector<double> NeuralNetwork::forward(const std::vector<double>& input) con
     for (int l = 0; l < numLayers - 1; ++l) {
         int fanIn  = layerSizes_[l];
         int fanOut = layerSizes_[l + 1];
+        size_t fanInSz = static_cast<size_t>(fanIn);
 
         std::vector<double> next(fanOut);
         for (int i = 0; i < fanOut; ++i) {
             double sum = biases_[l][i];
+            size_t rowBase = static_cast<size_t>(i) * fanInSz;
             for (int j = 0; j < fanIn; ++j) {
-                sum += weights_[l][i * fanIn + j] * activation[j];
+                sum += weights_[l][rowBase + static_cast<size_t>(j)] * activation[j];
             }
             next[i] = sum;
         }
