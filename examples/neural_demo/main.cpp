@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <vector>
 
-#include "../../engine/neural/NeuralNetwork.h"
+#include "NeuralNetwork.h"
 
 // Print a vector of doubles to stdout.
 static void printOutput(const std::vector<double>& v)
@@ -22,7 +22,7 @@ int main()
     // Network architecture: 3 inputs -> 4 hidden neurons -> 2 outputs
     std::vector<int> layers = {3, 4, 2};
 
-    // Sample input used for all demonstrations
+    // Fixed input used for all demonstrations.
     std::vector<double> input = {0.5, -0.3, 0.8};
 
     std::cout << "=== Neural Network Reproducibility Demo ===" << std::endl;

@@ -1,29 +1,27 @@
 #include "NeuralNetwork.h"
 
 #include <cmath>
+#include <random>
 #include <stdexcept>
 
 NeuralNetwork::NeuralNetwork(const std::vector<int>& layerSizes, unsigned int seed)
     : seed_(seed), layerSizes_(layerSizes)
 {
-    if (layerSizes.size() < 2) {
+    if (layerSizes_.size() < 2) {
         throw std::invalid_argument("Network must have at least 2 layers (input and output).");
+    }
+    for (int sz : layerSizes_) {
+        if (sz <= 0) {
+            throw std::invalid_argument("Each layer must have at least one neuron.");
+        }
     }
     initialize();
 }
 
 void NeuralNetwork::initialize()
 {
-    // Use a simple linear congruential generator seeded with seed_ so that
-    // initialization is fully reproducible given the same seed.
-    // LCG parameters from Numerical Recipes.
-    uint64_t state = seed_;
-    auto nextDouble = [&]() -> double {
-        state = state * 6364136223846793005ULL + 1442695040888963407ULL;
-        // Map to (0, 1)
-        return static_cast<double>((state >> 11) & 0x1FFFFFFFFFFFFFULL) /
-               static_cast<double>(0x1FFFFFFFFFFFFFULL);
-    };
+    // Use std::mt19937 seeded with seed_ for deterministic, reproducible init.
+    std::mt19937 rng(seed_);
 
     int numLayers = static_cast<int>(layerSizes_.size());
     weights_.resize(numLayers - 1);
@@ -33,17 +31,23 @@ void NeuralNetwork::initialize()
         int fanIn  = layerSizes_[l];
         int fanOut = layerSizes_[l + 1];
 
-        // He initialization: scale = sqrt(2 / fanIn), suitable for ReLU networks
-        double scale = std::sqrt(2.0 / fanIn);
+        // He initialization: std. dev. = sqrt(2 / fanIn), suitable for ReLU activations.
+        double stddev = std::sqrt(2.0 / static_cast<double>(fanIn));
+        std::normal_distribution<double> dist(0.0, stddev);
 
-        weights_[l].resize(fanOut * fanIn);
+        weights_[l].resize(static_cast<size_t>(fanOut) * static_cast<size_t>(fanIn));
         for (double& w : weights_[l]) {
-            // Map uniform sample to [-1, 1] then scale
-            w = (nextDouble() * 2.0 - 1.0) * scale;
+            w = dist(rng);
         }
 
-        biases_[l].resize(fanOut, 0.0);
+        biases_[l].assign(static_cast<size_t>(fanOut), 0.0);
     }
+}
+
+void NeuralNetwork::setSeed(unsigned int seed)
+{
+    seed_ = seed;
+    initialize();
 }
 
 std::vector<double> NeuralNetwork::relu(const std::vector<double>& v)
@@ -68,16 +72,18 @@ std::vector<double> NeuralNetwork::forward(const std::vector<double>& input) con
         int fanIn  = layerSizes_[l];
         int fanOut = layerSizes_[l + 1];
 
-        std::vector<double> next(fanOut);
+        std::vector<double> next(static_cast<size_t>(fanOut));
         for (int i = 0; i < fanOut; ++i) {
-            double sum = biases_[l][i];
+            double sum = biases_[l][static_cast<size_t>(i)];
+            size_t rowOffset = static_cast<size_t>(i) * static_cast<size_t>(fanIn);
             for (int j = 0; j < fanIn; ++j) {
-                sum += weights_[l][i * fanIn + j] * activation[j];
+                sum += weights_[l][rowOffset + static_cast<size_t>(j)]
+                       * activation[static_cast<size_t>(j)];
             }
-            next[i] = sum;
+            next[static_cast<size_t>(i)] = sum;
         }
 
-        // Apply ReLU to all but the last layer
+        // Apply ReLU to all layers except the final output layer.
         if (l < numLayers - 2) {
             activation = relu(next);
         } else {

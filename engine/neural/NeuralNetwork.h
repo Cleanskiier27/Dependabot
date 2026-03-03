@@ -10,16 +10,21 @@ class NeuralNetwork {
 public:
     // Construct a network with the given layer sizes and random seed.
     // layerSizes[0] is the input size; layerSizes.back() is the output size.
+    // Throws std::invalid_argument if fewer than 2 layers are specified.
     NeuralNetwork(const std::vector<int>& layerSizes, unsigned int seed);
 
     // Run forward propagation and return the output activations.
+    // Throws std::invalid_argument if input size does not match the network input layer.
     std::vector<double> forward(const std::vector<double>& input) const;
 
     // Return the seed used to initialize this network.
     unsigned int getSeed() const;
 
+    // Reinitialize weights and biases using a new seed.
+    void setSeed(unsigned int seed);
+
 private:
-    // Initialize weights and biases using Xavier initialization seeded by seed_.
+    // Initialize weights and biases using He initialization seeded by seed_.
     void initialize();
 
     // Apply the ReLU activation function element-wise.
