@@ -3,7 +3,9 @@
 #include <vector>
 #include <string>
 
-#include "NeuralNetwork.h"
+#include "google/cloud/aiplatform/v1/prediction_service_client.h"
+#include "google/cloud/common_options.h"
+#include "google/protobuf/struct.pb.h"
 
 // Print a labeled vector of doubles to stdout.
 static void printVector(const std::string& label, const std::vector<double>& v)
@@ -18,20 +20,30 @@ static void printVector(const std::string& label, const std::vector<double>& v)
     std::cout << " ]" << std::endl;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-    // Artemis network: 4 sensor inputs -> 8 hidden -> 8 hidden -> 3 outputs
-    // Represents a mission-control style classifier with a fixed seed for
-    // fully reproducible results across runs.
-    const std::vector<int> artemisLayers = {4, 8, 8, 3};
-    const unsigned int artemisSeed = 2024;
+    if (argc < 4) {
+        std::cerr << "Usage: " << argv[0]
+                  << " <project-id> <location-id> <endpoint-id>" << std::endl;
+        return 1;
+    }
 
-    std::cout << "=== Artemis Neural Network Demo ===" << std::endl;
-    std::cout << "Architecture : 4 -> 8 -> 8 -> 3" << std::endl;
-    std::cout << "Seed         : " << artemisSeed << std::endl;
+    std::string projectId = argv[1];
+    std::string locationId = argv[2];
+    std::string endpointId = argv[3];
+
+    // Endpoint resource name: projects/{project}/locations/{location}/endpoints/{endpoint}
+    std::string endpointName = "projects/" + projectId + "/locations/" + locationId + "/endpoints/" + endpointId;
+    // API Endpoint URL for the specific region
+    std::string apiEndpoint = locationId + "-aiplatform.googleapis.com";
+
+    std::cout << "=== Artemis Neural Network Demo (Vertex AI) ===" << std::endl;
+    std::cout << "Target Endpoint: " << endpointName << std::endl;
     std::cout << std::endl;
 
-    NeuralNetwork artemis(artemisLayers, artemisSeed);
+    namespace aiplatform = ::google::cloud::aiplatform::v1;
+    auto options = google::cloud::Options{}.set<google::cloud::EndpointOption>(apiEndpoint);
+    auto client = aiplatform::PredictionServiceClient(aiplatform::MakePredictionServiceConnection(options));
 
     // --- Sample inputs representing four sensor readings ---
     std::vector<std::vector<double>> inputs = {
@@ -46,21 +58,35 @@ int main()
         std::cout << "Input  " << i + 1 << ": ";
         printVector("", inputs[i]);
 
-        std::vector<double> output = artemis.forward(inputs[i]);
+        // Construct the request
+        aiplatform::PredictRequest request;
+        request.set_endpoint(endpointName);
+
+        // Convert input vector to protobuf Value (ListValue)
+        google::protobuf::Value instance;
+        auto* list_value = instance.mutable_list_value();
+        for (double val : inputs[i]) {
+            list_value->add_values()->set_number_value(val);
+        }
+        *request.add_instances() = instance;
+
+        // Call Predict
+        auto response = client.Predict(request);
+        if (!response) {
+            std::cerr << "Prediction failed: " << response.status() << std::endl;
+            continue;
+        }
+
         std::cout << "Output " << i + 1 << ": ";
-        printVector("", output);
+        if (response->predictions_size() > 0 && response->predictions(0).has_list_value()) {
+            std::vector<double> output;
+            for (const auto& v : response->predictions(0).list_value().values()) {
+                output.push_back(v.number_value());
+            }
+            printVector("", output);
+        }
         std::cout << std::endl;
     }
-
-    // --- Reproducibility check ---
-    std::cout << "--- Reproducibility check ---" << std::endl;
-    NeuralNetwork artemis2(artemisLayers, artemisSeed);
-    std::vector<double> ref    = artemis.forward(inputs[0]);
-    std::vector<double> check  = artemis2.forward(inputs[0]);
-    bool reproducible = (ref == check);
-    std::cout << "Two Artemis networks with seed " << artemisSeed
-              << " produce identical outputs: "
-              << (reproducible ? "YES" : "NO") << std::endl;
 
     return 0;
 }

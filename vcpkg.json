@@ -1,0 +1,10 @@
+{
+  "name": "dependabot-neural-network",
+  "version-string": "0.1.0",
+  "dependencies": [
+    {
+      "name": "google-cloud-cpp",
+      "features": [ "aiplatform", "storage" ]
+    }
+  ]
+}

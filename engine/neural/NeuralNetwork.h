@@ -19,7 +19,7 @@ public:
     unsigned int getSeed() const;
 
 private:
-    // Initialize weights and biases using Xavier initialization seeded by seed_.
+    // Initialize weights and biases using He initialization seeded by seed_.
     void initialize();
 
     // Apply the ReLU activation function element-wise.

@@ -1,23 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
-project(NeuralNetworkDemo CXX)
+project(DependabotNeuralNetwork CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- Neural network library ---
-add_library(neural
+# Dependencies: Google Cloud Vertex AI (AI Platform)
+find_package(google_cloud_cpp_aiplatform REQUIRED)
+
+# Engine Library
+add_library(neural_network
     engine/neural/NeuralNetwork.cpp
+    engine/neural/NeuralNetwork.h
 )
-target_include_directories(neural PUBLIC engine/neural)
+target_link_libraries(neural_network PRIVATE google-cloud-cpp::aiplatform)
 
-# --- Demo executable ---
-add_executable(neural_demo
-    examples/neural_demo/main.cpp
-)
-target_link_libraries(neural_demo PRIVATE neural)
+# Examples
+add_executable(neural_demo examples/neural_demo/main.cpp)
+target_link_libraries(neural_demo PRIVATE neural_network)
 
-# --- Artemis demo executable ---
-add_executable(artemis_demo
-    examples/artemis_demo/main.cpp
-)
-target_link_libraries(artemis_demo PRIVATE neural)
+add_executable(artemis_demo examples/artemis_demo/main.cpp)
+target_link_libraries(artemis_demo PRIVATE neural_network google-cloud-cpp::aiplatform)

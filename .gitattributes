@@ -1,0 +1,10 @@
+# Enforce Unix line endings to ensure consistency across Windows and Linux environments
+* text=auto eol=lf
+
+# Source files
+*.cpp text
+*.h text
+
+# Documentation and logs
+*.md text
+*.txt text
