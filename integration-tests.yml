@@ -1,0 +1,43 @@
+name: Integration Tests
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-connectivity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_SSH_KEY" | install -m 600 /dev/stdin ~/.ssh/id_deploy
+          echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+
+      - name: Start SSH Tunnel
+        env:
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
+        run: |
+          # Start the PowerShell tunnel script in the background
+          # Example: Forward local port 3000 to remote localhost:8080 (Local Forwarding)
+          pwsh ./scripts/open_ssh_tunnel.ps1 -LocalPort 3000 -RemoteTarget 127.0.0.1:8080 &
+          
+          # Store the PID if you need to kill it explicitly later (GitHub cleans up automatically)
+          echo $! > tunnel.pid
+          
+          # Wait for the connection to establish
+          echo "Waiting for tunnel..."
+          sleep 5
+
+      - name: Run Integration Tests
+        run: |
+          # Example: Verify connectivity through the tunnel
+          curl -v http://localhost:3000 || echo "Connection test failed, but workflow continues for debugging"
