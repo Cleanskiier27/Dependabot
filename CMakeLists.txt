@@ -20,7 +20,7 @@ add_executable(neural_demo examples/neural_demo/main.cpp)
 target_link_libraries(neural_demo PRIVATE neural_network)
 
 add_executable(artemis_demo examples/artemis_demo/main.cpp)
-target_link_libraries(artemis_demo PRIVATE neural_network google-cloud-cpp::aiplatform)
+target_link_libraries(artemis_demo PRIVATE neural_network google-cloud-cpp::aiplatform google-cloud-cpp::storage)
 
 add_executable(storage_demo examples/storage_demo/main.cpp)
 target_link_libraries(storage_demo PRIVATE google-cloud-cpp::storage)

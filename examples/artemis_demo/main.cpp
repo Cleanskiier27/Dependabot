@@ -2,35 +2,38 @@
 #include <iomanip>
 #include <vector>
 #include <string>
+#include <sstream>
 
 #include "google/cloud/aiplatform/v1/prediction_service_client.h"
 #include "google/cloud/common_options.h"
 #include "google/protobuf/struct.pb.h"
+#include "google/cloud/storage/client.h"
 
-// Print a labeled vector of doubles to stdout.
-static void printVector(const std::string& label, const std::vector<double>& v)
+// Print a labeled vector of doubles to a generic output stream.
+static void printVector(std::ostream& os, const std::string& label, const std::vector<double>& v)
 {
-    std::cout << label << "[ ";
+    os << label << "[ ";
     for (size_t i = 0; i < v.size(); ++i) {
-        std::cout << std::fixed << std::setprecision(6) << v[i];
+        os << std::fixed << std::setprecision(6) << v[i];
         if (i + 1 < v.size()) {
-            std::cout << ", ";
+            os << ", ";
         }
     }
-    std::cout << " ]" << std::endl;
+    os << " ]" << std::endl;
 }
 
 int main(int argc, char* argv[])
 {
-    if (argc < 4) {
+    if (argc < 5) {
         std::cerr << "Usage: " << argv[0]
-                  << " <project-id> <location-id> <endpoint-id>" << std::endl;
+                  << " <project-id> <location-id> <endpoint-id> <bucket-name>" << std::endl;
         return 1;
     }
 
     std::string projectId = argv[1];
     std::string locationId = argv[2];
     std::string endpointId = argv[3];
+    std::string bucketName = argv[4];
 
     // Endpoint resource name: projects/{project}/locations/{location}/endpoints/{endpoint}
     std::string endpointName = "projects/" + projectId + "/locations/" + locationId + "/endpoints/" + endpointId;
@@ -45,6 +48,9 @@ int main(int argc, char* argv[])
     auto options = google::cloud::Options{}.set<google::cloud::EndpointOption>(apiEndpoint);
     auto client = aiplatform::PredictionServiceClient(aiplatform::MakePredictionServiceConnection(options));
 
+    // Prepare a buffer to store results for upload
+    std::stringstream resultBuffer;
+
     // --- Sample inputs representing four sensor readings ---
     std::vector<std::vector<double>> inputs = {
         { 1.0,  0.0,  0.0,  0.0},
@@ -54,9 +60,14 @@ int main(int argc, char* argv[])
     };
 
     std::cout << "--- Forward pass results ---" << std::endl;
+    resultBuffer << "--- Forward pass results ---" << std::endl;
+
     for (size_t i = 0; i < inputs.size(); ++i) {
         std::cout << "Input  " << i + 1 << ": ";
-        printVector("", inputs[i]);
+        printVector(std::cout, "", inputs[i]);
+        
+        resultBuffer << "Input  " << i + 1 << ": ";
+        printVector(resultBuffer, "", inputs[i]);
 
         // Construct the request
         aiplatform::PredictRequest request;
@@ -78,15 +89,34 @@ int main(int argc, char* argv[])
         }
 
         std::cout << "Output " << i + 1 << ": ";
+        resultBuffer << "Output " << i + 1 << ": ";
+
         if (response->predictions_size() > 0 && response->predictions(0).has_list_value()) {
             std::vector<double> output;
             for (const auto& v : response->predictions(0).list_value().values()) {
                 output.push_back(v.number_value());
             }
-            printVector("", output);
+            printVector(std::cout, "", output);
+            printVector(resultBuffer, "", output);
         }
         std::cout << std::endl;
+        resultBuffer << std::endl;
     }
+
+    // --- Upload results to Google Cloud Storage ---
+    std::cout << "Uploading results to gs://" << bucketName << "/artemis_results.txt ..." << std::endl;
+    
+    namespace gcs = ::google::cloud::storage;
+    auto storage_client = gcs::Client();
+    auto writer = storage_client.WriteObject(bucketName, "artemis_results.txt");
+    writer << resultBuffer.str();
+    writer.Close();
+
+    if (!writer.metadata()) {
+        std::cerr << "Upload failed: " << writer.metadata().status().message() << std::endl;
+        return 1;
+    }
+    std::cout << "Upload successful!" << std::endl;
 
     return 0;
 }

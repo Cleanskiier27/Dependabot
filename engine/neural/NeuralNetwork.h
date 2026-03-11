@@ -2,6 +2,7 @@
 #define NEURAL_NETWORK_H
 
 #include <vector>
+#include <string>
 #include <cstdint>
 
 // NeuralNetwork implements a fully-connected feedforward neural network
@@ -14,6 +15,18 @@ public:
 
     // Run forward propagation and return the output activations.
     std::vector<double> forward(const std::vector<double>& input) const;
+
+    // Save the network's weights and biases to a binary file.
+    void saveWeights(const std::string& filename) const;
+
+    // Load the network's weights and biases from a binary file.
+    void loadWeights(const std::string& filename);
+
+    // Get the current weights of the network.
+    const std::vector<std::vector<double>>& getWeights() const;
+
+    // Get the current biases of the network.
+    const std::vector<std::vector<double>>& getBiases() const;
 
     // Return the seed used to initialize this network.
     unsigned int getSeed() const;

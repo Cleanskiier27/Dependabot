@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <stdexcept>
+#include <fstream>
 
 NeuralNetwork::NeuralNetwork(const std::vector<int>& layerSizes, unsigned int seed)
     : seed_(seed), layerSizes_(layerSizes)
@@ -91,4 +92,77 @@ std::vector<double> NeuralNetwork::forward(const std::vector<double>& input) con
 unsigned int NeuralNetwork::getSeed() const
 {
     return seed_;
+}
+
+void NeuralNetwork::saveWeights(const std::string& filename) const
+{
+    std::ofstream outFile(filename, std::ios::binary);
+    if (!outFile) {
+        throw std::runtime_error("Cannot open file for writing: " + filename);
+    }
+
+    // Write layer sizes to validate architecture on load
+    int numLayers = static_cast<int>(layerSizes_.size());
+    outFile.write(reinterpret_cast<const char*>(&numLayers), sizeof(numLayers));
+    outFile.write(reinterpret_cast<const char*>(layerSizes_.data()), numLayers * sizeof(int));
+
+    // Write weights and biases
+    for (const auto& layer_weights : weights_) {
+        size_t size = layer_weights.size();
+        outFile.write(reinterpret_cast<const char*>(&size), sizeof(size));
+        outFile.write(reinterpret_cast<const char*>(layer_weights.data()), size * sizeof(double));
+    }
+
+    for (const auto& layer_biases : biases_) {
+        size_t size = layer_biases.size();
+        outFile.write(reinterpret_cast<const char*>(&size), sizeof(size));
+        outFile.write(reinterpret_cast<const char*>(layer_biases.data()), size * sizeof(double));
+    }
+}
+
+void NeuralNetwork::loadWeights(const std::string& filename)
+{
+    std::ifstream inFile(filename, std::ios::binary);
+    if (!inFile) {
+        throw std::runtime_error("Cannot open file for reading: " + filename);
+    }
+
+    // Read and validate architecture
+    int numLayers;
+    inFile.read(reinterpret_cast<char*>(&numLayers), sizeof(numLayers));
+    std::vector<int> fileLayerSizes(numLayers);
+    inFile.read(reinterpret_cast<char*>(fileLayerSizes.data()), numLayers * sizeof(int));
+
+    if (fileLayerSizes != layerSizes_) {
+        throw std::runtime_error("Network architecture in file does not match this network.");
+    }
+
+    // Read weights and biases
+    for (auto& layer_weights : weights_) {
+        size_t size;
+        inFile.read(reinterpret_cast<char*>(&size), sizeof(size));
+        if (size != layer_weights.size()) {
+            throw std::runtime_error("Weight matrix size mismatch in file.");
+        }
+        inFile.read(reinterpret_cast<char*>(layer_weights.data()), size * sizeof(double));
+    }
+
+    for (auto& layer_biases : biases_) {
+        size_t size;
+        inFile.read(reinterpret_cast<char*>(&size), sizeof(size));
+        if (size != layer_biases.size()) {
+            throw std::runtime_error("Bias vector size mismatch in file.");
+        }
+        inFile.read(reinterpret_cast<char*>(layer_biases.data()), size * sizeof(double));
+    }
+}
+
+const std::vector<std::vector<double>>& NeuralNetwork::getWeights() const
+{
+    return weights_;
+}
+
+const std::vector<std::vector<double>>& NeuralNetwork::getBiases() const
+{
+    return biases_;
 }
